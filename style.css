@@ -24,7 +24,20 @@
     color: salmon;
 }
 
+/*-----------------------------------------------------*/
+/* nostros.html */
+#banner1{
+    background-image: url(Imagenes/banda1.png);
+    background-color: #cccccc;
+    background-position: center;
+    background-size: cover;
+    height: 400px;
+}
 
+#img_car{
+    height: 600px;
+    position: relative;
+}
 
 /*-----------------------------------------------------*/
 /* contactanos.html */
