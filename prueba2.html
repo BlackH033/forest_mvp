@@ -5,133 +5,145 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <style>
+        ul
+        {
+            list-style-type: none;/*Este estilo elimina los puntos que trae el ul por defecto */
+            margin: 0;
+            padding: 0;/*espacio que hay entre el contenido y el borde*/
+           overflow: hidden;/* Permite regular si los contenidos que sobre salen,hace que oculte todos los contenidos que se salen de la caja del elemento */
+            background-color: rgb(144, 144, 144);
+        }
+        li
+        {
+            float: left;/* */
+        }
+        li a, .lista
+        {
+            display: inline-block; /* permite establecer un ancho y un alto fijo, respetando margenes, crea cajas que son de bloque y el linea simultanea */
+            color: white;/*Color de la letra*/
+            text-align: center;/*Alineacion del texto en el centro*/
+            padding: 14px 16px;/*Espacio entre las palabras*/
+            text-decoration: none;/*Elimino la linea que viene por defecto de los enlaces*/
+        }
+     
+        li a:hover
+        {
+            background-color: rgb(247, 134, 134);
+        }
+        li.dropdown-lista
+        {
+            display: inline-block;
+        }
+        .listadesplegable
+        {
+            display: none;/*esconde o muestra alternativamente el contenido de un elemento div*/
+            position:absolute;/*permite posicionar elementos de manera absoluta*/
+            background-color: #bee2e0;
+            min-width: 160px;/*se usa para determinar la anchura minima de un elemento aplicable a elementos tipo bloque*/
+           
+        }
+        .listadesplegable a
+        {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .listadesplegable a:hover
+        {
+            background-color: #975050;
+        }
+        .dropdown-lista:hover .listadesplegable
+        {
+            display: block;/* Me muestra los elementos ocultos en un bloquee en el centro*/ 
+        }
+      #imgcabecera
+      {
+        display: block;/*Me muestra un elemento en un bloque, no permite que otro elemento quede a su lado*/
+        width: 1000px;
+        margin: auto;/* Me sirve para que el navegador asigne un proporcion adecuada al espacio en donde se va a centrar la imgen*/
+      }
+      .contenido
+      {
+        width: 100%;
+        max-width:1200px;
+        height: 430px;
+        display: flex;/*Ayuda a colocar los elementos como si fueran celdas de tablas, se comportan de manera adaptable,es una propiedad que indica que un elemento tiene un capacidad flexible para altenar sus dimenciones y llenar el espacio que tenga disponible, para evitar un desbordamiento*/
+        flex-wrap: wrap;/*especifica que los elementos son obligados a permanecer en una misma linea, permite controlar la direccion actual donde seran apilados los elementos*/
+        justify-content: center;/*Define como el navegador distribuye el espacio a lo largo del eje principal de su contenedor*/
+        margin: auto;
+      }
+      .contenido .card
+      {
+          width: 330px;
+          height: 430px;
+          border-radius: 13px;/*Borde redondo, entre mas tamaño mas redondo quedan los bordes*/
+          box-shadow: 0 2px 2px rgba(2, 1, 1, 0.2);/*Efecto sombra en las los elementos*/
+          overflow: hidden;/* Permite regular si los contenidos que sobre salen,hace que oculte todos los contenidos que se salen de la caja del elemento */
+          margin:20px;
+          text-align: center;
+          transition: all 0.25s;/*me sirve para animar un elemento pero desde el color, es una animacion basica de css*/
+      }
+      .contenido .card:hover
+      {
+        transform: translateY(-15px);/*DEFINE CUANTO SE MOVERÁ EL ELEMENTO EN ESA direccion, en este caso la direccion Y*/
+        box-shadow: 0 12px 16px rgba(3, 3, 3, 0.2);
+      }
+      .contenido .card img
+      {
+        width: 330px;
+        height: 220px;
+      }
+    </style>
 </head>
 <body>
-    <div class="jumbotron jumboton-fluid text-center" id="jumbo">
-      <a href="index.html"><img src="Imagenes/logo principal.png" alt="" id="imgcabe" class="img-fluid"></a>
-      <strong><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt obcaecati in distinctio, cumque omnis quaerat. Illum nulla dolor explicabo illo deleniti eius? Repellat architecto ex repudiandae labore voluptatem asperiores et?</p></strong>
-    </div>
-    <nav class="navbar navbar-dark  navbar-expand-lg bg-dark">
-        <a class="navbar-brand" href="index.html"><img src="Imagenes/hachas2.png" width="30" height="30" alt="" class="d-inline-block align-top"> MVP</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button> 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Inicio<span class="sr-only"></span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Nosotros.html">Nosotros</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Deportes
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="futbol.html">Fútbol</a>
-                <a class="dropdown-item" href="baloncesto.html">Baloncesto</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="otros.html">Otros</a>
-              </div>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="Contactanos.html">Contactanos</a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-          </form>
-        </div>
-    </nav>
-    <div id="up_t">
-      <div class="container" id="up_t">
-        <br><br>
-      </div>
-    </div>
-    <div class="container-fluid text-center text-white" id="banner1">
-      <br><br><br><br><br><br>
-      <h2 class="">SOBRE NOSOTROS</h2>
-    </div>
-    <div id="up_t">
-      <div class="container" id="up_t">
-        <br><br>
-      </div>
-    </div>
-    <br><br>
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <p class="text-left">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque non, sapiente porro deleniti officiis a ipsum distinctio amet eius illum id ipsa quod asperiores sed reiciendis, fuga placeat dolores? Quidem.
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, nam tempora. Impedit qui explicabo atque! Mollitia, cumque. Iusto dolores ab, soluta porro repellendus repudiandae pariatur harum voluptates illum dolor officia?
-          </p>
-        </div>
-        <div class="col">
-          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="Imagenes/car1.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="Imagenes/car2.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="Imagenes/car3.jpg" class="d-block w-100" alt="...">
-              </div>
+    <header><!--Es la cabecera del contenido de la pagina, donde por lo general va el logo  o barras de navegacion-->
+    <img src="Imagenes/Logo-Adidas.jpg" alt="" id="imgcabecera">
+    <h1 style="position: absolute; top:53%; left: 40%;">Tienda de Ropa deportiva</h1>
+    <!--El atributo position:absolute permite posicionar elementos de manera definida dandole valores a top,left,buttom y right que estos a su vez indican la distancia con respecto a un punto-->
+    </header>
+    <nav>
+        <!--Barra de navegacion=Lista de enlaces, ul y li-->
+        <ul>
+            <li><a href="">Incio</a></li>
+            <li><a href="">Tendencias</a></li>
+            <li class="dropdown-lista"><a href="" class="lista">Categorias</a>
+            <div class="listadesplegable">
+                <a href="">Hombres</a>
+                <a href="">Mujeres</a>
+                <a href="">Niños</a>
             </div>
-            <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </button>
-          </div>
-        </div>
-      </div>
+            </li>
+            <li><a href="">Contactenos</a></li>
+        </ul>
+    </nav>
+    <section class="contenido"><!--Etiqueta para darle contenido a la pagina-->
+       <div class="card">
+            <img src="Imagenes/arbol2.png" alt="">
+            <h4>Árbol</h4>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam corporis possimus laboriosam quo alias consequatur perferendis pariatur itaque reiciendis autem! Amet, quae nihil et perferendis in sint eius nemo dolore?
+            </p>
+            <a href="#">Leer Más</a>
+       </div>
+       <div class="card">
+        <img src="Imagenes/gato.jpg" alt="">
+        <h4>Gato</h4>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam corporis possimus laboriosam quo alias consequatur perferendis pariatur itaque reiciendis autem! Amet, quae nihil et perferendis in sint eius nemo dolore?
+        </p>
+        <a href="#">Leer Más</a>
+   </div>
+     <div class="card">
+    <img src="Imagenes/leon.png" alt="">
+    <h4>Leon</h4>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam corporis possimus laboriosam quo alias consequatur perferendis pariatur itaque reiciendis autem! Amet, quae nihil et perferendis in sint eius nemo dolore?
+    </p>
+    <a href="#">Leer Más</a>
     </div>
-  
-    <br><br><br>
-    <footer class="bg-dark text-center text-white">
-      <div class="container p-4 pb-0">
-        <div>
-          <a href="Contactanos.html" title="To Top">
-            <i class="bi bi-chevron-double-up" id="upi"></i>
-          </a>
-        </div>
-        <div>
-          <a href="index.html">
-            <img src="Imagenes/logo4.png" class="img-fluid" width="150" height="150" alt="" id="logo4">
-          </a>
-        </div>
-        <hr>
-        <div>
-          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-            <i class="bi bi-facebook"></i>
-          </a>
-          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-            <i class="bi bi-instagram"></i>
-          </a>
-          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-            <i class="bi bi-twitter"></i>
-          </a>
-        </div>
-      </div>
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2021 Copyright
-        <a class="text-white" href="https://www.instagram.com/vic_rios_f/" target=”_blank” id="firma">Victor Rios</a>
-      </div>
-    </footer>
-  </body>
-  </html>
+    </section>
+</body>
+</html>

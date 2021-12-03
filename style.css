@@ -24,6 +24,7 @@
     color: salmon;
 }
 
+
 /*-----------------------------------------------------*/
 /* nostros.html */
 #banner1{
@@ -55,13 +56,31 @@
     width: 329 !important;
     height: 349 !important;
 }
+/*-----------------------------------------------------*/
+/* analisis quimico*/
+#banner2{
+    background-image: url(Imagenes/banner2.jpg);
+    background-color: #cccccc;
+    background-position: center;
+    background-size: cover;
+    height: 400px;
+}
+#up_t_g{
+    background-color:#343a40!important ;
+}
+
+.card:hover{
+    box-shadow: 5px 0px 40px rgba(252, 252, 252, 0.596);
+}
+
+
 
 /*-----------------------------------------------------*/
 /* contactanos.html */
 
 #up_t{
-    background-color:#28a745 ;
-    color: white;
+    background-color:#28a745!important ;
+    color: white!important;
 }
 
 #firma:hover{
