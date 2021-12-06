@@ -24,6 +24,10 @@
     color: salmon;
 }
 
+a{
+    text-decoration: none!important;
+}
+
 
 /*-----------------------------------------------------*/
 /* nostros.html */
@@ -70,11 +74,19 @@
     background-color:#343a40!important ;
 }
 
-.card:hover{
+#cart:hover{
     box-shadow: 5px 0px 40px rgba(252, 252, 252, 0.596);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); 
 }
 
-
+#ilum_bl:hover{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); 
+}
+#cart{
+    width: 1000px !important;
+}
 
 /*-----------------------------------------------------*/
 /* contactanos.html */
